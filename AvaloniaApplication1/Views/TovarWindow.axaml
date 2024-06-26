@@ -1,0 +1,44 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AvaloniaApplication1.Views.TovarWindow"
+        Title="Добавление товара"
+		MaxHeight="500" MaxWidth="850"
+		MinHeight="450" MinWidth="800"
+		Height="450" Width="800">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="100*"/>
+			<ColumnDefinition Width="400*"/>
+			<ColumnDefinition Width="267*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+
+		<Button Content="Список товаров" Grid.Column="2" Grid.Row="1" Width="200" HorizontalContentAlignment="Center"
+				Margin="35,0,0,10" Background="Brown" Foreground="Black" BorderBrush="Transparent" FontSize="16" Command="{Binding OPEN}"/>
+		<TextBlock Margin="5,0,0,0" Text="Имя:" Grid.Row="1" Grid.Column="0" Foreground="#498c51" FontSize="14" />
+		<TextBlock Margin="5,0,0,0" Text="Описание:" Grid.Row="2" Grid.Column="0" Foreground="#498c51" FontSize="14"/>
+		<TextBlock Margin="5,0,0,0" Text="Колличество:" Grid.Row="3" Grid.Column="0" Foreground="#498c51" FontSize="14"/>
+		<TextBlock Margin="5,0,0,0" Text="Цена:" Grid.Row="4" Grid.Column="0" Foreground="#498c51" FontSize="14" />
+		
+			<TextBlock Foreground="#498c51" Grid.Column="1" Text="{Binding TextBlock92}" FontSize="16" HorizontalAlignment="Center" Margin="0,25,0,0"/>
+			<TextBox  Text="{Binding name1}" Grid.Column="1" Grid.Row="1" FontSize="16" Margin="0,0,0,10"/>
+			<TextBox  Text="{Binding opisanie}" Grid.Column="1" Grid.Row="2" FontSize="16" Margin="0,0,0,10"/>
+			<TextBox  Text="{Binding Colichestvo}" Grid.Column="1" Grid.Row="3" FontSize="16" Margin="0,0,0,10"/>
+			<TextBox  Text="{Binding Cost}" Grid.Column="1" Grid.Row="4" FontSize="16" Margin="0,0,0,10"/>
+			<Button Content="Добавить Товар" Command="{Binding AddTovar}" Grid.Column="2" Grid.Row="3"
+					Background="Brown" Foreground="Black" BorderBrush="Transparent" FontSize="16"
+		HorizontalAlignment="Center" Margin="0,0,0,10" Width="200" HorizontalContentAlignment="Center"/>
+		
+		
+	</Grid>
+</Window>

@@ -1,0 +1,43 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AvaloniaApplication1.Views.SecondWindow"
+        Title="Регистрация"
+		MaxHeight="500" MaxWidth="850"
+		MinHeight="450" MinWidth="800"
+		Height="450" Width="800">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="75*"/>
+			<ColumnDefinition Width="467*"/>
+			<ColumnDefinition Width="267*"/>
+		</Grid.ColumnDefinitions>
+		<TextBlock Margin="5,0,0,0" Text="Логин:" Grid.Row="0" Grid.Column="0" Foreground="#498c51" FontSize="14"/>
+		<TextBlock Margin="5,0,0,0" Text="Пароль:" Grid.Row="1" Grid.Column="0" Foreground="#498c51" FontSize="14"/>
+		<TextBlock Margin="5,0,0,0" Text="Фамилия:" Grid.Row="2" Grid.Column="0" Foreground="#498c51" FontSize="14"/>
+		<TextBlock Margin="5,0,0,0" Text="Имя:" Grid.Row="3" Grid.Column="0" Foreground="#498c51" FontSize="14"/>
+		<TextBlock Margin="5,0,0,0" Text="Отчество:" Grid.Row="4" Grid.Column="0" Foreground="#498c51" FontSize="14"/>
+		<TextBlock Margin="5,0,0,0" Text="Почта:" Grid.Row="5" Grid.Column="0" Foreground="#498c51" FontSize="14" />
+
+		<TextBox Width="450" Height="50"  x:Name="text4" Text="{Binding mail}" Grid.Row="5" Grid.Column="1"/>
+		<TextBox Width="450" Height="50"  x:Name="text3" Text="{Binding lastname}" Grid.Row="4" Grid.Column="1"/>
+		<TextBox Width="450" Height="50"  x:Name="text2" Text="{Binding name}" Grid.Row="3" Grid.Column="1"/>
+		<TextBox Width="450" Height="50"  x:Name="text1" Text="{Binding surname}" Grid.Row="2" Grid.Column="1"/>
+		<TextBox Width="450" Height="50"  x:Name="passwordBox" Text="{Binding password}" Grid.Row="1" Grid.Column="1"/>
+		<TextBox Width="450" Height="50"  x:Name="usernameTextBox" Text="{Binding login}" Grid.Row="0" Grid.Column="1"/>
+		<Button x:Name="button_reg" Command="{Binding Registr}" Margin="5,0,0,0" Grid.Column="2" Grid.Row="5" Background="Brown"
+				Width="255" Height="63" Content=" Зарегистрироваться" Foreground="Black" HorizontalContentAlignment="Center"/>
+		<TextBlock Grid.Column="2" Grid.Row="3" Text="{Binding TextBlock91}" Foreground="#498c51" Margin="50,70,0,0" />
+		</Grid>
+</Window>

@@ -1,0 +1,57 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AvaloniaApplication1.Views.SeeTovar2"
+        Title="SeeTovar2"
+		MaxHeight="500" MaxWidth="850"
+		MinHeight="450" MinWidth="800"
+		Height="450" Width="800">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="600"/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+		<ListBox ItemsSource="{Binding Tovars}" Width="600" Height="440" Grid.Column="0"  Margin="5,3,0,3" SelectedItem="{Binding SelectedItem}">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition/>
+							<ColumnDefinition/>
+							<ColumnDefinition/>
+						</Grid.ColumnDefinitions>
+						
+						<TextBlock Text="{Binding Name}" Grid.Column="1" Margin="0,0,0,0"/>
+						<TextBlock Text="{Binding Opis}" Grid.Column="1" Margin="0,30,0,0">
+							<TextBlock.Text>
+								<MultiBinding StringFormat="Описание: {0}">
+									<Binding Path="Opis"/>
+								</MultiBinding>
+							</TextBlock.Text>
+						</TextBlock>
+						<TextBlock Grid.Column="2" Margin="0,30,0,0">
+							<TextBlock.Text>
+								<MultiBinding StringFormat="Колличество: {0}">
+									<Binding Path="Koli"/>
+								</MultiBinding>
+							</TextBlock.Text>
+						</TextBlock>
+						<TextBlock Grid.Column="2" Margin="0,0,0,0">
+							<TextBlock.Text>
+								<MultiBinding StringFormat="Цена: {0}">
+									<Binding Path="Cost"/>
+								</MultiBinding>
+							</TextBlock.Text>
+						</TextBlock>
+					</Grid>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+		<Button Grid.Column="1" Content="Удалить" Width="150"
+				HorizontalContentAlignment="Center"
+				Background="Brown" Foreground="Black" BorderBrush="Transparent" FontSize="16" Margin="25,400,0,0" Command="{Binding too} "/>
+		<TextBlock Text="{Binding delete}" Grid.Column="1" Margin="10,50,0,0" Foreground="#498c51"/>
+	</Grid>
+</Window>
